@@ -8,7 +8,11 @@ app.get("/",function(req,res){
 app.get("/fallinlovewith/:thing",function(req,res){
     var thing = req.params.thing;
     res.render("love.ejs");
-})
+});
+
+app.get("*",function(req,res){
+  res.send("NO SUCH PAGE");
+});
 
 app.listen("3000",process.env.IP,function(){
     console.log("Server is listening");
