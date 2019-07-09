@@ -7,9 +7,17 @@ app.get("/",function(req,res){
 
 app.get("/fallinlovewith/:thing",function(req,res){
     var thing = req.params.thing;
-    res.render("love.ejs");
+    res.render("love.ejs",{thingVar : thing});
 });
 
+app.get("/posts",function(req,res){
+  var posts =[
+    {title:"post 1",author:"Suzie"},
+    {title:"My Adorable pet",author:"Shin"},
+    {title:"Can you believe this!! ",author:"Taro"}
+  ];
+  res.render("posts.ejs",{posts:posts});
+});
 app.get("*",function(req,res){
   res.send("NO SUCH PAGE");
 });
