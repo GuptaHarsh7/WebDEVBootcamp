@@ -1,0 +1,8 @@
+image:
+  file: Dockerfile
+ports:
+- port: 3000
+tasks:
+- command: mongod
+- command: npm install && node scripts/pop && npmm start
+- command: npx sass --watch sass:public/stylesheets
